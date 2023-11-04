@@ -1,12 +1,8 @@
 package Cost;
 
-public class CostEuro implements Cost{
+public class CostEuro extends Cost {
 
-    public double cost;
-    public double courseEuro;
-    public double courseUsd;
-
-    public double getCost() {
-        return cost * ( courseUsd / courseEuro);
+    public double getCostInCurrency() {
+        return costInUsd * (courseUsd / courseEuro);
     }
 }

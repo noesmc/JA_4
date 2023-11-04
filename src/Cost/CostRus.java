@@ -1,10 +1,8 @@
 package Cost;
 
-public class CostRus implements Cost{
-    public double cost;
-    public double courseRus;
+public class CostRus extends Cost {
 
-    public double getCost() {
-        return cost * courseRus;
+    public double getCostInCurrency() {
+        return costInUsd * courseRus;
     }
 }
