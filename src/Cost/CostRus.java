@@ -3,6 +3,6 @@ package Cost;
 public class CostRus extends Cost {
 
     public double getCostInCurrency() {
-        return costInUsd * courseRus;
+        return cost * courseRus;
     }
 }

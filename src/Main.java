@@ -1,3 +1,4 @@
+import Car.Car;
 import Cost.*;
 
 import java.util.Scanner;
@@ -5,48 +6,49 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
         CostByn costByn = new CostByn();
         CostEuro costEuro = new CostEuro();
         CostRus costRus = new CostRus();
 
         Car skoda = new Car("Skoda",
-                "Octavia",
-                "A5 scout",
-                2012,
-                "Universal",
-                "Gasoline",
-                1800);
+            "Octavia",
+            "A5 scout",
+            2012,
+            "Universal",
+            "Gasoline",
+            1800,
+            15000);
 
         Car bmw = new Car("Audi",
-                "Octavia",
-                "A5 scout",
-                2012,
-                "Universal",
-                "Gasoline",
-                1800);
+            "Octavia",
+            "A5 scout",
+            2012,
+            "Universal",
+            "Gasoline",
+            1800,
+            10000);
 
         Car audi = new Car("Bmw",
-                "Octavia",
-                "A5 scout",
-                2012,
-                "Universal",
-                "Gasoline",
-                1800);
+            "Octavia",
+            "A5 scout",
+            2012,
+            "Universal",
+            "Gasoline",
+            1800,
+            15000);
 
-        String str;
-        Scanner scanner = new Scanner(System.in);
         do {
             System.out.printf("""
                     Choose the car's brand: %s, %s or %s. To exit press "Enter"
                     """, skoda.getBrand(), audi.getBrand(), bmw.getBrand());
-            str = scanner.nextLine();
-            switch (str) {
+            switch (scanner.nextLine()) {
                 case "Skoda":
                     skoda.getInfo();
                     printCost(costByn, costEuro, costRus);
                     break;
-                case ("Bwm"):
+                case "Bwm":
                     bmw.getInfo();
                     printCost(costByn, costEuro, costRus);
                     break;
@@ -55,7 +57,7 @@ public class Main {
                     printCost(costByn, costEuro, costRus);
                     break;
             }
-        } while (!str.isEmpty());
+        } while (!scanner.nextLine().isEmpty());
     }
 
     public static void printCost(Cost costByn, Cost costEuro, Cost costRus) {
