@@ -11,14 +11,13 @@ public class Car {
     private String form;
     private String fuelType;
     private float volumeInCm3;
-    private float cost;
 
     public String getBrand() {
         return brand;
     }
 
     public Car(String brand, String model, String modelRange, int yearOfCreating, String form, String fuelType,
-               float volumeInCm3, float cost) {
+               float volumeInCm3) {
         this.brand = brand;
         this.model = model;
         this.modelRange = modelRange;
@@ -26,11 +25,6 @@ public class Car {
         this.form = form;
         this.fuelType = fuelType;
         this.volumeInCm3 = volumeInCm3;
-        this.cost = cost;
-    }
-
-    public void setCost(float cost) {
-        this.cost = cost;
     }
 
     public void getInfo() {
@@ -42,7 +36,6 @@ public class Car {
                 Form: %s,
                 Type of fuel: %s,
                 Volume in dm3: %f,
-                Cost %f
-                """, brand, model, modelRange, yearOfCreating, form, fuelType, volumeInCm3 / 1000f, cost);
+                """, brand, model, modelRange, yearOfCreating, form, fuelType, volumeInCm3 / 1000f);
     }
 }
